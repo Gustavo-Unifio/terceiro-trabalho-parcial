@@ -4,12 +4,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Editora {
+public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    public long Id;
+
+    public String titulo;
+
+    public String autor;
+
+    public Integer anoPublicacao;
+
+    public String isbn;
     
-    public String nome;
+    @ManyToOne
+    public Editora editora;
 }
